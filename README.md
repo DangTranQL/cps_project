@@ -27,4 +27,4 @@ New terminal: `roslaunch  yahboomcar_nav  yahboomcar_map.launch  use_rviz:=false
 
 New terminal: `rosrun QR_Dist_Camera JoyComOdom.py` after running `catkin_make` in ~/CPS_ws
 
-Operater the Rosmaster X3 using the controller, and press A to record the current position and orientation.
+Operater the Rosmaster X3 using the controller, and press A to record the current position and orientation. The data will be saved to  ~/QR_Dist_Camera/src.
