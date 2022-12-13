@@ -16,7 +16,6 @@ Scenarios Details:
 
 ## How to Run?
 ## Phase One
-=======
 In phase one, we will control the Teleoperating Agent to map the environment, and record the locations of QR codes by pressing button A on the controller.
 
 To run phase one, first go to the `root` directory and run `roslaunch launch/first_phase.launch`
@@ -26,7 +25,6 @@ Mark the initial location of the robot. The command will open gmap and the camer
 After scanning all QR codes, open a new terminal and run `rosrun map_server map_saver -f ~/CPS_ws/src/QR_Camera_Dist/maps/map_name` to save the map. Then terminate the launch of phase one. Open `data.csv` to ensure that all QR codes are saved, there will be some duplicates in the file, but we will remove them in phase two.
 
 ### Phase Two
-=======
 In phase two, the Task Agent will go to the available QR code with highest priority.
 
 To run phase two, first put the robot in its initial location. Then go to the `root` directory and run `roslaunch launch/second_phase.launch map:=map_name`.
