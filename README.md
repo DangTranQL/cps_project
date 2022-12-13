@@ -1,4 +1,5 @@
 # cps_project
+This is a multi-agent robotic system.
 ## RP-Lidar
 In order to use RP-Lidar, first run `sudo vim .bashrc`
 
