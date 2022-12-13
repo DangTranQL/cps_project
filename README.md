@@ -37,3 +37,6 @@ After enter the list of blocked QR codes, the robot will ignore the blocked QR c
 ### main.py
 This file is to open the camera and scan QR codes.
 
+## Video Demo
+- [Link to video demo](https://drive.google.com/file/d/1WP3eAxKgsKSg2fDq-870fyxHzeAvRwC-/view?usp=sharing).
+
