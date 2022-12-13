@@ -10,11 +10,24 @@ Scenarios Details:
     The non-electric vehicles are considered as virtual obstacles occupying parking spots. 
 
     Priority 1 is virtually simulated to be a parking spot consisting of nearby available charging electrical station.
-    
+
     Priority 2 is virtually simulated to be a normal parking spot without any nearby available charging electrical station.  
 
 ## Design Diagram
 <center> <img src="./images/diagram.png" width="100%" /> </center>
+
+## How to Compile?
+### Editing source code
+Within the ROS environment using Ubuntu, type <b>catkin_make</b> into the terminal within the root of the workspace is a required process to save and build a newly edited code to run the code
+
+### Adding packages
+In order to use packages within your ROS code, packages are required to include in the <b>CMakeLists.txt</b>, which is found within the root directory of the package file.
+
+### Adding installation path
+Prior to running the python file, the python file needs to be made as an executable with command line <b>"chmod +x (python_file_name)"</b>. Additionally, an installation path to the python file within the package file src directory is needed to be included into the <b>CMakeLists.txt</b>. 
+
+### Summary on compiling
+First edit the source code and make the python file as an executable, then add used packages and required installation path within the <i>CMakeLists.txt</i>. Once the prior step has complete, do <b>catkin_make</b> within the root of the entire workspace. Then, the python file can be run with the ros command "rosrun" or "roslaunch".
 
 ## How to Run?
 ### Phase One
