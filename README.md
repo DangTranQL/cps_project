@@ -12,7 +12,6 @@ Scenarios Details:
     Priority 2 is virtually simulated to be a normal parking spot without any nearby available charging electrical station.  
 
 ## Design Diagram
-<<<<<<< HEAD
 ![design_diagram](images/diagram.png)
 
 ## How to Run?
@@ -22,7 +21,6 @@ Scenarios Details:
 
 
 ## Phase One
->>>>>>> 45ef5a0a88f221345d460a3a80ed8f2d83280047
 In phase one, we will control the Teleoperating Agent to map the environment, and record the locations of QR codes by pressing button A on the controller.
 
 To run phase one, first go to the `root` directory and run `roslaunch launch/first_phase.launch`
@@ -41,7 +39,6 @@ The command will open gmap. Then run `rosrun QR_Camera_Dist test_nav.py` to star
 After enter the list of blocked QR codes, the robot will ignore the blocked QR codes and go to the first available QR code in `test_data.csv` file, then it will output `Goal Execution Done!` and stop.
 
 ## Software Contributions
-Main con
 ### main.py
 This file is to open the camera and scan QR codes.
 
