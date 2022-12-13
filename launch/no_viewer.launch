@@ -1,0 +1,10 @@
+<launch>
+	<!--Starting the Lidar up-->
+	<!--include file="$(find rplidar_ros)/launch/rplidar.launch"/-->
+
+	<node name="joystick" pkg="joy" type="joy_node" respawn="true"/>
+	<!--include file="$(find yahboomcar_ctrl)/launch/twist_joy.launch"/-->	
+	<node name="QR_Axes" pkg="QR_Camera_Dist" type="test_get_axes.py" respawn="true"/>
+	
+	<!--include file="$(find yahboomcar_bringup)/launch/bringup.launch"/-->
+</launch>

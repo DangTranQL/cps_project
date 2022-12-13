@@ -1,0 +1,34 @@
+<launch>
+	<!--Lidar and Yahboomcar-->
+	<!--include file="$(find yahboomcar_nav)/launch/laser_bringup.launch"/-->
+
+	<!--Lidar, Camera, Yahboomcar-->
+	<!--include file="$(find yahboomcar_nav)/launch/laser_astrapro_bringup.launch"/-->
+
+	<!--Lidar, mono, yahboomcar-->
+	<include file="$(find yahboomcar_nav)/launch/laser_usb_bringup.launch"/>
+	
+	<!--rviz-->
+	<arg name="use_rviz" default="true"/>
+	
+	<!--Map Name-->
+	<arg name="map" default="first"/>
+
+	<!--Load Map-->
+	<node name="map_server" pkg="map_server" type="map_server" args="$(find QR_Camera_Dist)/maps/$(arg map).yaml"/>
+
+	<!--AMCL-->
+	<include file="$(find yahboomcar_nav)/launch/library/amcl.launch"/>
+	
+	<!--Move_Base-->
+	<include file="$(find yahboomcar_nav)/launch/library/move_base.launch"/>
+
+	<!--RTABmap -->
+	<!--include file="$(find yahboomcar_nav)/launch/library/rtabmap_nav.launch"/-->
+
+	<!--RVIZ-->
+	<include file="$(find yahboomcar_nav)/launch/view/view_navigate.launch" if="$(arg use_rviz)"/>
+    
+    <!--Starting up Nodes-->
+    <!--node name="movebase_client_py" pkg="QR_Camera_Dist" type="test_nav.py"/-->
+</launch>

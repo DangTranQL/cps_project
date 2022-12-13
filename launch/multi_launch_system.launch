@@ -1,0 +1,8 @@
+<launch>
+	<!--include file="$(find rplidar_ros)/launch/view_rplidar.launch"/-->
+	<include file="$(find rplidar_ros)/launch/rplidar.launch"/>
+	<node name="joystick" pkg="joy" type="joy_node" respawn="true"/>
+	<include file="$(find yahboomcar_bringup)/launch/bringup.launch"/>
+	<node name="rosCam" pkg="QR_Camera_Dist" type="ros_cam.py" respawn="true"/>
+</launch>
+

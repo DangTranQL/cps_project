@@ -1,0 +1,18 @@
+<launch>
+	<!--Starting Robot UP-->
+	<arg name="robot_type" value="$(env ROBOT_TYPE)" doc="robot_type [X1,X3,X3plus,R2,X7]"/>
+	
+	<!--Starting up Driver Module (Laser + YahboomCar)--> 
+	<include file="$(find yahboomcar_nav)/launch/laser_bringup.launch"/>
+	
+	<!--Starting up Mapping Command-->
+	<include file="$(find yahboomcar_nav)/launch/yahboomcar_map.launch"/>
+	
+	<!--Opening Visual interface (rviz)-->
+	<!--include file="$(find yahboomcar_nav)/launch/view_map.launch"/-->
+
+	<!--Starting up Nodes-->
+	<node name="joystick" pkg="joy" type="joy_node" respawn="true"/>
+	<node name="video_pub_py" pkg="QR_Camera_Dist" type="main.py" respawn="true"/>
+	<node name="CamJoyOdom" pkg="QR_Camera_Dist" type="JoyCamOdom.py"/>
+</launch>	
