@@ -6,8 +6,11 @@ This is a multi-agent robotic system. The system consists of a Teleoperating Age
 A parking lot hosting both electric and non-electric vechicles. There are electrical cars that autonomously navigate to their desired destination from their current locations. Commonly, vehicles are usually park into a parking lot. Additionally, electric vehicles would prefer to be park at a spot where there consist of a charging station. Therefore, creating a path guiding robot system to communicate the best spot towards the electric vehicle to park would help reduce the time complexity for the autonomous electric vehicle to find the optimal spot within the parking lot.
 
 Scenarios Details:
+
     The non-electric vehicles are considered as virtual obstacles occupying parking spots. 
+
     Priority 1 is virtually simulated to be a parking spot consisting of nearby available charging electrical station.
+    
     Priority 2 is virtually simulated to be a normal parking spot without any nearby available charging electrical station.  
 
 ## Design Diagram
