@@ -1,4 +1,4 @@
-# cps_project
+# Path-guiding Multi-agent Robotic System
 Authors: Vince, Qi, Dang 2022
 This is a multi-agent robotic system. The system consists of a Teleoperating Agent which is used to map the environment and locations of QR codes, and a Task Agent which is used to go the available QR code with highest priority.
 
@@ -27,3 +27,8 @@ To run phase two, first put the robot in its initial location. Then go to the `r
 The command will open gmap. Then run `rosrun QR_Camera_Dist test_nav.py` to start phase two. This command will prompt us to input a list of QR codes that we want to block. Before enter the list, go to `test_data.csv` which is the list of QR codes with: `priority`, `distace`, `position_x`, `position_y`, `orientation_x`, `orientation_y`, `orientation_z`, `orientation_w` that we already remove the duplicates using pandas dataframe based on `time`, check the row number of each QR code. The QR codes are sorted in decreasing order of priority in which `priority 1` is the highest, so all QR codes with priority 1 will be put on top, and in each priority, different QR codes are sorted in increasing order of distance to the initial location.
 
 After enter the list of blocked QR codes, the robot will ignore the blocked QR codes and go to the first available QR code in `test_data.csv` file, then it will output `Goal Execution Done!` and stop.
+
+## Software Implemented
+### main.py
+This file is to open the camera and scan QR codes.
+
