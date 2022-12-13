@@ -28,7 +28,7 @@ In phase two, the Task Agent will go to the available QR code with highest prior
 
 To run phase two, first put the robot in its initial location. Then go to the `root` directory and run `roslaunch launch/second_phase.launch map:=map_name`.
 
-The command will open gmap. Then run `rosrun QR_Camera_Dist test_nav.py` to start phase two. This command will prompt us to input a list of QR codes that we want to block. Before enter the list, go to `test_data.csv` which is the list of QR codes with: <i>priority, distance, position_x, position_y, orientation_x, orientation_y, orientation_z, orientation_w</i> that we already remove the duplicates using pandas dataframe based on <i>time</i>, check the row number of each QR code. The QR codes are sorted in decreasing order of priority in which <i>priority 1</i> is the highest, so all QR codes with <i>priority 1</i> will be put on top, and in each priority, different QR codes are sorted in increasing order of distance to the initial location.
+The command will open gmap. Then run `rosrun QR_Camera_Dist test_nav.py` to start phase two. This command will prompt us to input a list of QR codes that we want to block. Before enter the list, go to `test_data.csv` which is the list of QR codes with: priority, distance, position_x, position_y, orientation_x, orientation_y, orientation_z, orientation_w that we already remove the duplicates using pandas dataframe based on time, check the row number of each QR code. The QR codes are sorted in decreasing order of priority in which priority 1 is the highest, so all QR codes with priority 1 will be put on top, and in each priority, different QR codes are sorted in increasing order of distance to the initial location.
 
 After enter the list of blocked QR codes, the robot will ignore the blocked QR codes and go to the first available QR code in `test_data.csv` file, then it will output `Goal Execution Done!` and stop.
 
@@ -55,7 +55,7 @@ Packages:
     rospy_tutorials.msgs : receive HeaderString data
     
 
-Within the main function, the node CamJoyOdom subscribe to three topics namely joy, odom, videos_frames (camera). To subscribe to these topic to use in one callback function, a package called <i>message_filters</i> and its imported function called <i>ApproximateTimeSynchronizer</i> are used. Before calling the callback function, a csv file, located within the current working directory, has opened to write <i>priority, posx, posy, orix, oriy, oriz, oriw, time</i> as categories into the file, to remove previous collections of old data and to be compatible with pandas dataframes function. 
+Within the <b>main</b> function, the node <i>CamJoyOdom</i> subscribe to three topics namely joy, odom, videos_frames (camera). To subscribe to these topic to use in one callback function, a package called message_filters and its imported function called ApproximateTimeSynchronizer are used. Before calling the callback function, a csv file, located within the current working directory, has opened to write priority, posx, posy, orix, oriy, oriz, oriw, time as categories into the file, to remove previous collections of old data and to be compatible with pandas dataframes function. 
 
 Within the callback function called <b>buttonCallBack</b>, it receives data from subscribe topics to be used to essentially append the information about the pose of the robot and the priority about the parking location. When the button A on the controller has been pressed, it will open the same csv file to append the pose of the robot at each QR code locations into the csv file. Additionally, the controller will also append a time to essentially remove duplicates, consisting of the same informations of each QR code. 
 
@@ -72,9 +72,12 @@ Packages:
 
     numpy                : wrap QR code
 
-<b>webcam()</b> fuction opens the camera through the path `/dev/video`. When a QR code is detected, it will read the priority of the QR code, and publish the priority to `video_frames` as a <i>HeaderString</i>. In display we can see also see that the QR code is wrapped around by purple lines with its priority on top.
+<b>webcam()</b> fuction opens the camera through the path `/dev/video`. When a QR code is detected, it will read the priority of the QR code, and publish the priority to `video_frames` as a HeaderString. In display we can see also see that the QR code is wrapped around by purple lines with its priority on top.
 
 ## test_nav.py
+In <b>main</b> function, the system will prompt us to enter a string of QR codes that we want to block (i.e. 1 2 3).
+
+To remove duplicates in `data.csv`, we read the file into pandas dataframe data, then use its sort_values and drop_duplicates functions to drop all duplicates based on time, and only keep the first value. To arrange the priorities, we use priority queue to put them in (priority, distance) order so that all QR codes with priority 1 are put on top, then next is priority 2. For QR codes with the same priority, we put them in increasing order of distance to initial location and append the queue into `test_data.csv` with priority, distance, posx, posy, orix, oriy, oriz, oriw. This way, the robot doesn't need to go through all values in `test_data.csv`, hence decreases time complexity.
 
 ## Video Demo
 [Link to video demo](https://drive.google.com/file/d/1WP3eAxKgsKSg2fDq-870fyxHzeAvRwC-/view?usp=sharing).
