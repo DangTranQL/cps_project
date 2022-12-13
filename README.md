@@ -32,7 +32,24 @@ The command will open gmap. Then run `rosrun QR_Camera_Dist test_nav.py` to star
 
 After enter the list of blocked QR codes, the robot will ignore the blocked QR codes and go to the first available QR code in `test_data.csv` file, then it will output `Goal Execution Done!` and stop.
 
-## Software Contributions
+## Main Software Artifacts Contributions
+
+### JoyCamOdom.py
+
+Packages:
+    rospy               : ros functions in python
+    csv                 : append informations into csv file
+    message_filters     : approximate synchronization of multiple subscribe topics to be used in one callback function
+    time                : remove duplicates through comparison
+    std_msgs.msg        : receive string data
+    nav_msgs.msg        : receive Odometry data
+    sensors_msgs.msg    : receive Joy data
+    rospy_tutorials.msg : receive HeaderString data
+
+Within the main function, the node CamJoyOdom subscribe to three topics namely joy, odom, videos_frames (camera). To subscribe to these topic to use in one callback function, a package called "message_filters" and its imported function called "ApproximateTimeSynchronizer" are used. Before calling the callback function, a csv file, located within the current working directory, has opened to write "priority,posx,posy,orix,oriy,oriz,oriw,time" as categories into the file, to remove previous collections of old data and to be compatible with pandas dataframes function. 
+
+Within the callback function called "buttonCallBack", it receives data from subscribe topics to be used to essentially append the information about the pose of the robot and the priority about the parking location. When the button A on the controller has been pressed, it will open the same csv file to append the pose of the robot at each QR code locations into the csv file. Additionally, the controller will also append a time to essentially remove duplicates, consisting of the same informations of each QR code. 
+
 ### main.py
 <b>webcam()</b> fuction opens the camera through the path `/dev/video`. When a QR code is detected, it will read the priority of the QR code, and publish the priority to `video_frames` as a <i>HeaderString</i>. In display we can see also see that the QR code is wrapped around by purple lines with its priority on top.
 
