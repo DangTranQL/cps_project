@@ -54,7 +54,7 @@ Packages:
     rospy_tutorials.msg : receive HeaderString data
     
 
-Within the <b>main</b> function, the node <i>CamJoyOdom<i> subscribe to three topics namely joy, odom, videos_frames (camera). To subscribe to these topic to use in one callback function, a package called message_filters and its imported function called ApproximateTimeSynchronizer are used. Before calling the callback function, a csv file, located within the current working directory, has opened to write priority, posx, posy, orix, oriy, oriz, oriw, time as categories into the file, to remove previous collections of old data and to be compatible with pandas dataframes function. 
+Within the <b>main</b> function, the node <i>CamJoyOdom</i> subscribe to three topics namely joy, odom, videos_frames (camera). To subscribe to these topic to use in one callback function, a package called message_filters and its imported function called ApproximateTimeSynchronizer are used. Before calling the callback function, a csv file, located within the current working directory, has opened to write priority, posx, posy, orix, oriy, oriz, oriw, time as categories into the file, to remove previous collections of old data and to be compatible with pandas dataframes function. 
 
 Within the callback function called <b>buttonCallBack</b>, it receives data from subscribe topics to be used to essentially append the information about the pose of the robot and the priority about the parking location. When the button A on the controller has been pressed, it will open the same csv file to append the pose of the robot at each QR code locations into the csv file. Additionally, the controller will also append a time to essentially remove duplicates, consisting of the same informations of each QR code. 
 
