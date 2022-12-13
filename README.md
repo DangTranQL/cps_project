@@ -35,7 +35,6 @@ After enter the list of blocked QR codes, the robot will ignore the blocked QR c
 ## Main Software Artifacts Contributions
 
 ### JoyCamOdom.py
-
 Packages:
 
     rospy               : ros functions in python
@@ -46,13 +45,13 @@ Packages:
 
     time                : remove duplicates through comparison
 
-    std_msgs.msgs        : receive string data
+    std_msgs.msg        : receive string data
 
-    nav_msgs.msgs        : receive Odometry data
+    nav_msgs.msg        : receive Odometry data
 
-    sensors_msgs.msgs    : receive Joy data
+    sensors_msgs.msg    : receive Joy data
 
-    rospy_tutorials.msgs : receive HeaderString data
+    rospy_tutorials.msg : receive HeaderString data
     
 
 Within the <b>main</b> function, the node <i>CamJoyOdom</i> subscribe to three topics namely joy, odom, videos_frames (camera). To subscribe to these topic to use in one callback function, a package called message_filters and its imported function called ApproximateTimeSynchronizer are used. Before calling the callback function, a csv file, located within the current working directory, has opened to write priority, posx, posy, orix, oriy, oriz, oriw, time as categories into the file, to remove previous collections of old data and to be compatible with pandas dataframes function. 
@@ -75,6 +74,24 @@ Packages:
 <b>webcam()</b> fuction opens the camera through the path `/dev/video`. When a QR code is detected, it will read the priority of the QR code, and publish the priority to `video_frames` as a HeaderString. In display we can see also see that the QR code is wrapped around by purple lines with its priority on top.
 
 ## test_nav.py
+Packages:
+
+    rospy               : ros functions in python
+
+    csv                 : append informations into csv file
+
+    queue               : data arrangement
+
+    pandas              : remove duplicates
+
+    math                : distance calculation
+
+    move_base_msgs.msg  : commuicate with move_base node
+
+    actionlib           : send base to target location
+
+    geometry_msgs.msg   : receive pose
+
 In <b>main</b> function, the system will prompt us to enter a string of QR codes that we want to block (i.e. 1 2 3).
 
 To remove duplicates in `data.csv`, we read the file into pandas dataframe data, then use its sort_values and drop_duplicates functions to drop all duplicates based on time, and only keep the first value. To arrange the priorities, we use priority queue to put them in (priority, distance) order so that all QR codes with priority 1 are put on top, then next is priority 2. For QR codes with the same priority, we put them in increasing order of distance to initial location and append the queue into `test_data.csv` with priority, distance, posx, posy, orix, oriy, oriz, oriw. This way, the robot doesn't need to go through all values in `test_data.csv`, hence decreases time complexity.
