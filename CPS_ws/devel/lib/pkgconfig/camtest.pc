@@ -1,0 +1,8 @@
+prefix=/home/jetson/CPS_ws/devel
+
+Name: camtest
+Description: Description of camtest
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

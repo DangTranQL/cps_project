@@ -1,0 +1,2 @@
+QR_Camera_Dist:camtest
+-DCATKIN_DEVEL_PREFIX=/home/jetson/CPS_ws/devel -DCMAKE_INSTALL_PREFIX=/home/jetson/CPS_ws/install -G Unix Makefiles

@@ -1,0 +1,8 @@
+prefix=/home/jetson/CPS_ws/install
+
+Name: QR_Camera_Dist
+Description: Description of QR_Camera_Dist
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

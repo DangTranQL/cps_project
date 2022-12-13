@@ -1,0 +1,4 @@
+<launch>
+	<node name="Astra_Camera" pkg="QR_Camera_Dist" type="test_Cam.py"/>
+	<node name="QR_Dist" pkg="QR_Camera_Dist" type="test_get_axes.py"/>
+</launch>
