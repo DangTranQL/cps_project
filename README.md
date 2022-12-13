@@ -12,7 +12,7 @@ Scenarios Details:
     Priority 2 is virtually simulated to be a normal parking spot without any nearby available charging electrical station.  
 
 ## Design Diagram
-<center><img src="./images/diagram.png" width="100%" /></center>
+<center> <img src="./images/diagram.png" width="100%" /> </center>
 
 ## How to Run?
 ### Phase One
