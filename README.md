@@ -1,5 +1,5 @@
 # Path-guiding Multi-agent Robotic System
-Authors: Vince, Qi, Dang 2022
+[2022] Authors: Vince, Qi, Dang
 
 This is a multi-agent robotic system. The system consists of a Teleoperating Agent which is used to map the environment and locations of QR codes, and a Task Agent which is used to go the available QR code with highest priority.
 <center><img src="./images/rosmasterx3.jpg" width="50%" /></center>
