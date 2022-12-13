@@ -1,5 +1,6 @@
 # Path-guiding Multi-agent Robotic System
 Authors: Vince, Qi, Dang 2022
+
 This is a multi-agent robotic system. The system consists of a Teleoperating Agent which is used to map the environment and locations of QR codes, and a Task Agent which is used to go the available QR code with highest priority.
 <center><img src="./images/rosmasterx3.jpg" width="50%" /></center>
 
@@ -15,8 +16,9 @@ Scenarios Details:
 <center><img src="./images/diagram.png" width="100%" /></center>
 
 ## How to Run?
-## Phase One
+### Phase One
 =======
+
 In phase one, we will control the Teleoperating Agent to map the environment, and record the locations of QR codes by pressing button A on the controller.
 
 To run phase one, first go to the `root` directory and run `roslaunch launch/first_phase.launch`
@@ -27,6 +29,7 @@ After scanning all QR codes, open a new terminal and run `rosrun map_server map_
 
 ### Phase Two
 =======
+
 In phase two, the Task Agent will go to the available QR code with highest priority.
 
 To run phase two, first put the robot in its initial location. Then go to the `root` directory and run `roslaunch launch/second_phase.launch map:=map_name`.
