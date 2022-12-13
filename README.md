@@ -1,4 +1,5 @@
 # cps_project
+Authors: Vince, Qi, Dan 2022
 This is a multi-agent robotic system. The system consists of a Teleoperating Agent which is used to map the environment and locations of QR codes, and a Task Agent which is used to go the available QR code with highest priority.
 
 ## Phase One
