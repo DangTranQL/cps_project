@@ -1,5 +1,5 @@
 # cps_project
-This is a multi-agent robotic system.
+This is a multi-agent robotic system. The system consists of a Teleoperating Agent which is used to map the environment and locations of QR codes, and a Task Agent which is used to go the available QR code with highest priority.
 ## RP-Lidar
 In order to use RP-Lidar, first run `sudo vim .bashrc`
 
