@@ -71,7 +71,7 @@ Packages:
 
     numpy                : wrap QR code
 
-<b>webcam()</b> fuction opens the camera through the path `/dev/video`. When a QR code is detected, it will read the priority of the QR code, and publish the priority to `video_frames` as a HeaderString. In display we can see also see that the QR code is wrapped around by purple lines with its priority on top.
+<b>webcam()</b> fuction opens the camera through the path `/dev/video0`. When a QR code is detected, it will read the priority of the QR code, and publish the priority to `video_frames` as a HeaderString. In display we can see also see that the QR code is wrapped around by purple lines with its priority on top.
 
 ## test_nav.py
 Packages:
@@ -96,9 +96,9 @@ In <b>main</b> function, the system will prompt us to enter a string of QR codes
 
 To remove duplicates in `data.csv`, we read the file into pandas dataframe data, then use its sort_values and drop_duplicates functions to drop all duplicates based on time, and only keep the first value. To arrange the priorities, we use priority queue to put them in (priority, distance) order so that all QR codes with priority 1 are put on top, then next is priority 2. For QR codes with the same priority, we put them in increasing order of distance to initial location and append the queue into `test_data.csv` with priority, distance, posx, posy, orix, oriy, oriz, oriw. This way, the robot doesn't need to go through all values in `test_data.csv`, hence decreases time complexity.
 
-Additionally, before to calling the function <i>movebase_client</i>, the movebase_client_py node will first publish its initial location to the <i>initialpose</i> topic to initialize the robot pose within a known map, obtained from phase one. For this current progress on the code, the initial pose of the robot must be the same for both the phases. 
+Additionally, before to calling the function <b>movebase_client</b>, the movebase_client_py node will first publish its initial location to the initialpose topic to initialize the robot pose within a known map, obtained from phase one. For this current progress on the code, the initial pose of the robot must be the same for both the phases. 
 
-Once the <i>movebase_client</i> has been called, it uses an <i>actionlib.SimpleActionClient</i> to essentially send the "goal" location request to a node called <i>move_base</i> to perform the task, where the robot will relocate its current location to the "goal" location. To send a request to the <i>move_base</i>, it uses a variable named "goal" to use the class called <i>MoveBaseGoal</i> to obtain all required information <i>target_pose</i> which consist of <i>frame_id, stamp, positions, and orientations</i>. These informations can be essentially obtained from the csv file `test_data.csv`.  
+Once the movebase_client has been called, it uses an actionlib.SimpleActionClient to essentially send the "goal" location request to a node called move_base to perform the task, where the robot will relocate its current location to the "goal" location. To send a request to the move_base, it uses a variable named "goal" to use the class called MoveBaseGoal to obtain all required information target_pose which consist of frame_id, stamp, positions, and orientations. These informations can be essentially obtained from the csv file `test_data.csv`.  
 
 ## Video Demo
 [Link to video demo](https://drive.google.com/file/d/1WP3eAxKgsKSg2fDq-870fyxHzeAvRwC-/view?usp=sharing).
