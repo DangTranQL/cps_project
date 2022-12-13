@@ -12,17 +12,10 @@ Scenarios Details:
     Priority 2 is virtually simulated to be a normal parking spot without any nearby available charging electrical station.  
 
 ## Design Diagram
-<<<<<<< HEAD
 ![design_diagram](images/diagram.png)
 
 ## How to Run?
 ### Phase One
-=======
-![diagram](images/diagram.png)
-
-
-## Phase One
->>>>>>> 45ef5a0a88f221345d460a3a80ed8f2d83280047
 In phase one, we will control the Teleoperating Agent to map the environment, and record the locations of QR codes by pressing button A on the controller.
 
 To run phase one, first go to the `root` directory and run `roslaunch launch/first_phase.launch`
