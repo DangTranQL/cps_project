@@ -1,4 +1,5 @@
 # cps_project
+Authors: Vince, Qi, Dan 2022
 This is a multi-agent robotic system. The system consists of a Teleoperating Agent which is used to map the environment and locations of QR codes, and a Task Agent which is used to go the available QR code with highest priority.
 
 ## Phase One
@@ -11,4 +12,4 @@ Mark the initial location of the robot. The command will open gmap and the camer
 After scanning all QR codes, open a new terminal and run `rosrun map_server map_saver -f ~/CPS_ws/src/QR_Camera_Dist/maps/map_name` to save the map. Then terminate the launch of phase one. Open `data.csv` to ensure that all QR codes are saved, there will be some duplicates in the file, but we will remove them in phase two.
 
 ## Phase Two
-In phase two, the user will block whatever QR codes that 
+In phase two, we will block whatever QR codes that we want
