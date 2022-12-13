@@ -1,7 +1,7 @@
 # Path-guiding Multi-agent Robotic System
 Authors: Vince, Qi, Dang 2022
 This is a multi-agent robotic system. The system consists of a Teleoperating Agent which is used to map the environment and locations of QR codes, and a Task Agent which is used to go the available QR code with highest priority.
-![robot](images/rosmasterx3.jpg)
+<center><img src="./images/rosmasterx3.jpg" width="50%" /></center>
 
 ## Project Motivation & Scenarios
 A parking lot hosting both electric and non-electric vechicles. There are electrical cars that autonomously navigate to their desired destination from their current locations. Commonly, vehicles are usually park into a parking lot. Additionally, electric vehicles would prefer to be park at a spot where there consist of a charging station. Therefore, creating a path guiding robot system to communicate the best spot towards the electric vehicle to park would help reduce the time complexity for the autonomous electric vehicle to find the optimal spot within the parking lot.
@@ -12,7 +12,7 @@ Scenarios Details:
     Priority 2 is virtually simulated to be a normal parking spot without any nearby available charging electrical station.  
 
 ## Design Diagram
-![design_diagram](images/diagram.png)
+<center><img src="./images/diagram.png" width="100%" /></center>
 
 ## How to Run?
 ### Phase One
