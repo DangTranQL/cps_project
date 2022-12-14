@@ -11,7 +11,9 @@ Scenarios Details:
 
     Priority 1 is virtually simulated to be a parking spot consisting of nearby available charging electrical station.
 
-    Priority 2 is virtually simulated to be a normal parking spot without any nearby available charging electrical station.  
+    Priority 2 is virtually simulated to be a normal parking spot without any nearby available charging electrical station. 
+
+    The path guiding robot will essentially guide the electric vehicle to the best spot consisting of priority 1, instead of priority 2 (Priority 1 > Priority 2)  
 
 ## Design Diagram
 <center> <img src="./images/diagram.png" width="100%" /> </center>
@@ -42,9 +44,9 @@ After scanning all QR codes, open a new terminal and run `rosrun map_server map_
 ### Phase Two
 In phase two, the Task Agent will go to the available QR code with highest priority.
 
-To run phase two, first put the robot in its initial location. Then go to the `root` directory and run `roslaunch launch/second_phase.launch map:=map_name`.
+To run phase two, first put the robot in the marked initial location (phase one initial location). Then go to the `root` directory and run `roslaunch launch/second_phase.launch map:=map_name`.
 
-The command will open gmap. Then run `rosrun QR_Camera_Dist test_nav.py` to start phase two. This command will prompt us to input a list of QR codes that we want to block. Before enter the list, go to `test_data.csv` which is the list of QR codes with: priority, distance, position_x, position_y, orientation_x, orientation_y, orientation_z, orientation_w that we already remove the duplicates using pandas dataframe based on time, check the row number of each QR code. The QR codes are sorted in decreasing order of priority in which priority 1 is the highest, so all QR codes with priority 1 will be put on top, and in each priority, different QR codes are sorted in increasing order of distance to the initial location.
+The command will open the map called "map_name". Then run `rosrun QR_Camera_Dist test_nav.py` to start phase two. This command will prompt us to input a list of QR codes that we want to block. Before enter the list, go to `test_data.csv` which is the list of QR codes with: priority, distance, position_x, position_y, orientation_x, orientation_y, orientation_z, orientation_w that we already remove the duplicates using pandas dataframe based on time, check the row number of each QR code. The QR codes are sorted in decreasing order of priority in which priority 1 is the highest, so all QR codes with priority 1 will be put on top, and in each priority, different QR codes are sorted in an increasing order of distance, down the list, to the initial location.
 
 After enter the list of blocked QR codes, the robot will ignore the blocked QR codes and go to the first available QR code in `test_data.csv` file, then it will output `Goal Execution Done!` and stop.
 
