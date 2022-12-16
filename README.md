@@ -15,7 +15,7 @@ Scenarios Details:
 
     Priority 2 is virtually simulated to be a normal parking spot without any nearby available charging electrical station. 
 
-    The path guiding robot will essentially guide the electric vehicle to the best spot consisting of priority 1, instead of priority 2 (Priority 1 > Priority 2)  
+    The path guiding robot (Teleoperating Agent) will essentially guide the electric vehicles (Task Agent) to the best spot consisting of priority 1, instead of priority 2 (Priority 1 > Priority 2)  
 
 ## Design Diagram
 <center> <img src="./images/diagram.png" width="100%" /> </center>
