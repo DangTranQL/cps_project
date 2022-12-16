@@ -3,7 +3,7 @@ This is a multi-agent robotic system. The system consists of a Teleoperating Age
 <center><img src="./images/rosmasterx3.jpg" width="50%" /></center>
 
 ## Project Motivation & Scenarios
-A parking lot hosting both electric and non-electric vechicles. There are electrical cars that autonomously navigate to their desired destination from their current locations. Commonly, vehicles are usually park into a parking lot. Additionally, electric vehicles would prefer to be park at a spot where there consist of a charging station. Therefore, creating a path guiding robot system to communicate the best spot towards the electric vehicle to park would help reduce the time complexity for the autonomous electric vehicle to find the optimal spot within the parking lot.
+Electric vehicles are becoming more common and various parking lots have installed electrical charging stations to cater to the need to recharge electric powered vehicles. Commonly, electric vehicle drivers always spend both time and electricity, struggling to find a suitable parking space that hopefully consists of an electrical charging station. Considering the majority of people that are still using gas powered vehicles, there are minimal to almost none electrical power stations conveniently available to charge electric vehicles. Therefore, creating a path guiding robot system to communicate the best spot towards the electric vehicles to find the optimal spot within the parking lot would help save both its time and electricty in either non-autonomous or autonomous vehicles.
 
 <center> <img src=".\images\Functionality.png" width="100%" /> </center>
 
