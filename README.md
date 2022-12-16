@@ -1,5 +1,5 @@
 # Path-guiding Multi-agent Robotic System
-This is a multi-agent robotic system. The system consists of a Teleoperating Agent which is used to map the environment and locations of QR codes, and a Task Agent which is used to go the available QR code with highest priority.
+This is a multi-agent robotic system. The system consists of a Teleoperating Agent which is used to map the environment and locations of QR codes, and a Task Agent which is used to go the available QR code with highest priority. The system is based on Rosmaster X3 Jetson Nano 4GB.
 <center><img src="./images/rosmasterx3.jpg" width="50%" /></center>
 
 ## Project Motivation & Scenarios
