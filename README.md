@@ -123,9 +123,9 @@ Once the <b>movebase_client</b> has been called, it uses an actionlib.SimpleActi
 ## Video Demo
 [Link to video demo](https://drive.google.com/file/d/1WP3eAxKgsKSg2fDq-870fyxHzeAvRwC-/view?usp=sharing).
 
-## Reference
-[Motion and Gesture Control](https://github.com/Maniadarsh/EC545-Motion-Gesture-control).
+## References
+[Motion and Gesture Control](https://github.com/Maniadarsh/EC545-Motion-Gesture-control)
 
-[Base Action Control](https://hotblackrobotics.github.io/en/blog/2018/01/29/action-client-py/).
+[Base Action Control](https://hotblackrobotics.github.io/en/blog/2018/01/29/action-client-py/)
 
-[Yahboom Source Code](http://www.yahboom.net/study/ROSMASTER-X3).
+[Yahboom Source Code](http://www.yahboom.net/study/ROSMASTER-X3)
